@@ -1,10 +1,8 @@
 --------------------
 prettywork
 --------------------
-Author: John Doe <john@doe.com>
+Author: DarkLelik <dark@darkbsd.net>
 --------------------
 
-A basic Extra for MODx Revolution.
-
 Feel free to suggest ideas/improvements/bugs on GitHub:
-http://github.com/username/prettywork/issues
+http://github.com/lelikdark/prettywork/issues

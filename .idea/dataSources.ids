@@ -283,6 +283,18 @@
       <index name="name_field" unique="false" columns="name_field"/>
       <index name="parent_class" unique="false" columns="parent_class"/>
     </table>
+    <table name="modx_cmpgenerator" schema="" catalog="saitsaleru_test" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="package" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="database" sqlType="VARCHAR" precision="128" scale="0" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="tables" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="table_prefix" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12" def="Jyc="/>
+      <column name="build_scheme" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MQ=="/>
+      <column name="build_package" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MQ=="/>
+      <column name="create_date" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="last_ran" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
     <table name="modx_content_type" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
@@ -411,11 +423,6 @@
       <column name="constraint" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
       <column name="constraint_field" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
       <column name="constraint_class" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <index name="action" unique="false" columns="action"/>
-      <index name="active" unique="false" columns="active"/>
-      <index name="profile" unique="false" columns="profile"/>
-      <index name="template" unique="false" columns="template"/>
     </table>
     <table name="modx_lexicon_entries" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -425,12 +432,7 @@
       <column name="namespace" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12" def="J2NvcmUn"/>
       <column name="language" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12" def="J2VuJw=="/>
       <column name="createdon" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
-      <column name="editedon" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn" version="true"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <index name="language" unique="false" columns="language"/>
-      <index name="name" unique="false" columns="name"/>
-      <index name="namespace" unique="false" columns="namespace"/>
-      <index name="topic" unique="false" columns="topic"/>
+      <column name="editedon" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
     </table>
     <table name="modx_manager_log" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -439,7 +441,6 @@
       <column name="action" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
       <column name="classKey" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
       <column name="item" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="JzAn"/>
-      <primary-key name="PRIMARY" columns="id"/>
     </table>
     <table name="modx_media_sources" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -448,22 +449,16 @@
       <column name="class_key" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="J3NvdXJjZXMubW9kRmlsZU1lZGlhU291cmNlJw=="/>
       <column name="properties" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="true" jdbcType="-1"/>
       <column name="is_stream" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ=="/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <index name="class_key" unique="false" columns="class_key"/>
-      <index name="is_stream" unique="false" columns="is_stream"/>
-      <index name="name" unique="false" columns="name"/>
     </table>
     <table name="modx_media_sources_contexts" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="source" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <column name="context_key" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="J3dlYic="/>
-      <primary-key name="PRIMARY" columns="source,context_key"/>
     </table>
     <table name="modx_media_sources_elements" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="source" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <column name="object_class" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="J21vZFRlbXBsYXRlVmFyJw=="/>
       <column name="object" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <column name="context_key" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="J3dlYic="/>
-      <primary-key name="PRIMARY" columns="source,object,object_class,context_key"/>
     </table>
     <table name="modx_member_groups" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -471,9 +466,6 @@
       <column name="member" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <column name="role" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ=="/>
       <column name="rank" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <index name="rank" unique="false" columns="rank"/>
-      <index name="role" unique="false" columns="role"/>
     </table>
     <table name="modx_membergroup_names" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -482,11 +474,6 @@
       <column name="parent" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <column name="rank" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <column name="dashboard" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ=="/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <index name="name" unique="true" columns="name"/>
-      <index name="dashboard" unique="false" columns="dashboard"/>
-      <index name="parent" unique="false" columns="parent"/>
-      <index name="rank" unique="false" columns="rank"/>
     </table>
     <table name="modx_menus" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="text" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
@@ -499,16 +486,11 @@
       <column name="handler" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
       <column name="permissions" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
       <column name="namespace" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="J2NvcmUn"/>
-      <primary-key name="PRIMARY" columns="text"/>
-      <index name="action" unique="false" columns="action"/>
-      <index name="namespace" unique="false" columns="namespace"/>
-      <index name="parent" unique="false" columns="parent"/>
     </table>
     <table name="modx_namespaces" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="name" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
       <column name="path" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
       <column name="assets_path" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
-      <primary-key name="PRIMARY" columns="name"/>
     </table>
     <table name="modx_prettywork" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -518,8 +500,6 @@
       <column name="discription" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
       <column name="url" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
       <column name="tags" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <index name="date" unique="false" columns="date"/>
     </table>
     <table name="modx_property_set" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -527,51 +507,35 @@
       <column name="category" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <column name="description" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
       <column name="properties" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <index name="name" unique="true" columns="name"/>
-      <index name="category" unique="false" columns="category"/>
     </table>
     <table name="modx_register_messages" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="topic" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="id" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="created" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
       <column name="valid" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
-      <column name="accessed" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93" version="true"/>
+      <column name="accessed" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
       <column name="accesses" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <column name="expires" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <column name="payload" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="false" jdbcType="-1"/>
       <column name="kill" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
-      <primary-key name="PRIMARY" columns="topic,id"/>
-      <index name="accessed" unique="false" columns="accessed"/>
-      <index name="accesses" unique="false" columns="accesses"/>
-      <index name="created" unique="false" columns="created"/>
-      <index name="expires" unique="false" columns="expires"/>
-      <index name="valid" unique="false" columns="valid"/>
     </table>
     <table name="modx_register_queues" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="options" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="true" jdbcType="-1"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <index name="name" unique="true" columns="name"/>
     </table>
     <table name="modx_register_topics" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="queue" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="created" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
-      <column name="updated" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93" version="true"/>
+      <column name="updated" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
       <column name="options" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="true" jdbcType="-1"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <index name="name" unique="false" columns="name"/>
-      <index name="queue" unique="false" columns="queue"/>
     </table>
     <table name="modx_session" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="id" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
       <column name="access" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="data" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="true" jdbcType="-1"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <index name="access" unique="false" columns="access"/>
     </table>
     <table name="modx_site_content" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -617,26 +581,6 @@
       <column name="hide_children_in_tree" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
       <column name="show_in_tree" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ=="/>
       <column name="properties" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="true" jdbcType="-1"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <index name="alias" unique="false" columns="alias"/>
-      <index name="cache_refresh_idx" unique="false" columns="parent,menuindex,id"/>
-      <index name="cacheable" unique="false" columns="cacheable"/>
-      <index name="class_key" unique="false" columns="class_key"/>
-      <index name="content_ft_idx" unique="false" columns="pagetitle,longtitle,description,introtext,content"/>
-      <index name="context_key" unique="false" columns="context_key"/>
-      <index name="hide_children_in_tree" unique="false" columns="hide_children_in_tree"/>
-      <index name="hidemenu" unique="false" columns="hidemenu"/>
-      <index name="isfolder" unique="false" columns="isfolder"/>
-      <index name="menuindex" unique="false" columns="menuindex"/>
-      <index name="parent" unique="false" columns="parent"/>
-      <index name="pub_date" unique="false" columns="pub_date"/>
-      <index name="published" unique="false" columns="published"/>
-      <index name="searchable" unique="false" columns="searchable"/>
-      <index name="show_in_tree" unique="false" columns="show_in_tree"/>
-      <index name="template" unique="false" columns="template"/>
-      <index name="unpub_date" unique="false" columns="unpub_date"/>
-      <index name="uri" unique="false" columns="uri"/>
-      <index name="uri_override" unique="false" columns="uri_override"/>
     </table>
     <table name="modx_site_htmlsnippets" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -652,19 +596,12 @@
       <column name="properties" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
       <column name="static" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
       <column name="static_file" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <index name="name" unique="true" columns="name"/>
-      <index name="category" unique="false" columns="category"/>
-      <index name="locked" unique="false" columns="locked"/>
-      <index name="static" unique="false" columns="static"/>
     </table>
     <table name="modx_site_plugin_events" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="pluginid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <column name="event" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
       <column name="priority" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <column name="propertyset" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
-      <primary-key name="PRIMARY" columns="pluginid,event"/>
-      <index name="priority" unique="false" columns="priority"/>
     </table>
     <table name="modx_site_plugins" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -682,12 +619,6 @@
       <column name="moduleguid" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
       <column name="static" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
       <column name="static_file" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <index name="name" unique="true" columns="name"/>
-      <index name="category" unique="false" columns="category"/>
-      <index name="disabled" unique="false" columns="disabled"/>
-      <index name="locked" unique="false" columns="locked"/>
-      <index name="static" unique="false" columns="static"/>
     </table>
     <table name="modx_site_snippets" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -704,12 +635,6 @@
       <column name="moduleguid" sqlType="VARCHAR" precision="32" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
       <column name="static" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
       <column name="static_file" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <index name="name" unique="true" columns="name"/>
-      <index name="category" unique="false" columns="category"/>
-      <index name="locked" unique="false" columns="locked"/>
-      <index name="moduleguid" unique="false" columns="moduleguid"/>
-      <index name="static" unique="false" columns="static"/>
     </table>
     <table name="modx_site_templates" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -726,33 +651,22 @@
       <column name="properties" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
       <column name="static" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
       <column name="static_file" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <index name="templatename" unique="true" columns="templatename"/>
-      <index name="category" unique="false" columns="category"/>
-      <index name="locked" unique="false" columns="locked"/>
-      <index name="static" unique="false" columns="static"/>
     </table>
     <table name="modx_site_tmplvar_access" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="tmplvarid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <column name="documentgroup" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
-      <primary-key name="PRIMARY" columns="id"/>
     </table>
     <table name="modx_site_tmplvar_contentvalues" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="tmplvarid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <column name="contentid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <column name="value" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="false" jdbcType="-1"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <index name="contentid" unique="false" columns="contentid"/>
-      <index name="tmplvarid" unique="false" columns="tmplvarid"/>
-      <index name="tv_cnt" unique="false" columns="tmplvarid,contentid"/>
     </table>
     <table name="modx_site_tmplvar_templates" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="tmplvarid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <column name="templateid" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <column name="rank" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
-      <primary-key name="PRIMARY" columns="tmplvarid,templateid"/>
     </table>
     <table name="modx_site_tmplvars" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -774,18 +688,11 @@
       <column name="output_properties" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
       <column name="static" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
       <column name="static_file" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <index name="name" unique="true" columns="name"/>
-      <index name="category" unique="false" columns="category"/>
-      <index name="locked" unique="false" columns="locked"/>
-      <index name="rank" unique="false" columns="rank"/>
-      <index name="static" unique="false" columns="static"/>
     </table>
     <table name="modx_system_eventnames" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
       <column name="service" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
       <column name="groupname" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
-      <primary-key name="PRIMARY" columns="name"/>
     </table>
     <table name="modx_system_settings" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="key" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
@@ -793,13 +700,12 @@
       <column name="xtype" sqlType="VARCHAR" precision="75" scale="0" nullable="false" jdbcType="12" def="J3RleHRmaWVsZCc="/>
       <column name="namespace" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12" def="J2NvcmUn"/>
       <column name="area" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
-      <column name="editedon" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn" version="true"/>
-      <primary-key name="PRIMARY" columns="key"/>
+      <column name="editedon" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
     </table>
     <table name="modx_transport_packages" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="signature" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="created" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
-      <column name="updated" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93" version="true"/>
+      <column name="updated" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
       <column name="installed" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
       <column name="state" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ=="/>
       <column name="workspace" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
@@ -815,16 +721,6 @@
       <column name="version_patch" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
       <column name="release" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
       <column name="release_index" sqlType="SMALLINT UNSIGNED" precision="5" scale="0" nullable="false" jdbcType="5" def="MA=="/>
-      <primary-key name="PRIMARY" columns="signature"/>
-      <index name="disabled" unique="false" columns="disabled"/>
-      <index name="package_name" unique="false" columns="package_name"/>
-      <index name="provider" unique="false" columns="provider"/>
-      <index name="release" unique="false" columns="release"/>
-      <index name="release_index" unique="false" columns="release_index"/>
-      <index name="version_major" unique="false" columns="version_major"/>
-      <index name="version_minor" unique="false" columns="version_minor"/>
-      <index name="version_patch" unique="false" columns="version_patch"/>
-      <index name="workspace" unique="false" columns="workspace"/>
     </table>
     <table name="modx_transport_providers" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -834,11 +730,7 @@
       <column name="username" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
       <column name="api_key" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
       <column name="created" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
-      <column name="updated" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93" version="true"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <index name="name" unique="true" columns="name"/>
-      <index name="api_key" unique="false" columns="api_key"/>
-      <index name="username" unique="false" columns="username"/>
+      <column name="updated" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
     </table>
     <table name="modx_user_attributes" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -867,17 +759,12 @@
       <column name="comment" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
       <column name="website" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
       <column name="extended" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <index name="internalKey" unique="true" columns="internalKey"/>
     </table>
     <table name="modx_user_group_roles" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="description" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="true" jdbcType="-1"/>
       <column name="authority" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="OTk5OQ=="/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <index name="name" unique="true" columns="name"/>
-      <index name="authority" unique="false" columns="authority"/>
     </table>
     <table name="modx_user_group_settings" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="group" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
@@ -886,8 +773,7 @@
       <column name="xtype" sqlType="VARCHAR" precision="75" scale="0" nullable="false" jdbcType="12" def="J3RleHRmaWVsZCc="/>
       <column name="namespace" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12" def="J2NvcmUn"/>
       <column name="area" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
-      <column name="editedon" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn" version="true"/>
-      <primary-key name="PRIMARY" columns="group,key"/>
+      <column name="editedon" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
     </table>
     <table name="modx_user_messages" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -899,7 +785,6 @@
       <column name="private" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
       <column name="date_sent" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="read" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
-      <primary-key name="PRIMARY" columns="id"/>
     </table>
     <table name="modx_user_settings" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="user" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
@@ -908,8 +793,7 @@
       <column name="xtype" sqlType="VARCHAR" precision="75" scale="0" nullable="false" jdbcType="12" def="J3RleHRmaWVsZCc="/>
       <column name="namespace" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12" def="J2NvcmUn"/>
       <column name="area" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
-      <column name="editedon" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn" version="true"/>
-      <primary-key name="PRIMARY" columns="user,key"/>
+      <column name="editedon" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
     </table>
     <table name="modx_users" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -925,11 +809,6 @@
       <column name="primary_group" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" def="MA=="/>
       <column name="session_stale" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
       <column name="sudo" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <index name="username" unique="true" columns="username"/>
-      <index name="class_key" unique="false" columns="class_key"/>
-      <index name="primary_group" unique="false" columns="primary_group"/>
-      <index name="remote_key" unique="false" columns="remote_key"/>
     </table>
     <table name="modx_workspaces" schema="" catalog="saitsaleru_test" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -938,10 +817,6 @@
       <column name="created" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
       <column name="active" sqlType="TINYINT UNSIGNED" precision="3" scale="0" nullable="false" jdbcType="-6" def="MA=="/>
       <column name="attributes" sqlType="MEDIUMTEXT" precision="16777215" scale="0" nullable="true" jdbcType="-1"/>
-      <primary-key name="PRIMARY" columns="id"/>
-      <index name="path" unique="true" columns="path"/>
-      <index name="active" unique="false" columns="active"/>
-      <index name="name" unique="false" columns="name"/>
     </table>
   </data-source>
 </component>

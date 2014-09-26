@@ -1,6 +1,6 @@
 Changelog for prettywork.
 
-1.0.0-beta
+1.0.0-alfa
 ==============
 - Opimized for MODX 2.3
 - Improved processors
