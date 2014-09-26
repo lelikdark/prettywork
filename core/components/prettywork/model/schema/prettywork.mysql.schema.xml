@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model package="prettywork" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" phpdoc-package="prettywork"
-	   version="1.1">
+<model package="prettywork" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" version="1.1">
+	<object class="Prettywork" table="prettywork" extends="xPDOSimpleObject">
+		<field key="name" dbtype="varchar" precision="100" phptype="string" null="false" />
+		<field key="date" dbtype="date" phptype="date" null="false" index="index" />
+		<field key="filename" dbtype="varchar" precision="100" phptype="string" null="false" />
+		<field key="discription" dbtype="text" phptype="string" null="false" />
+		<field key="url" dbtype="text" phptype="string" null="false" />
+		<field key="tags" dbtype="varchar" precision="255" phptype="string" null="false" />
 
-	<object class="prettyworkItem" table="prettywork_items" extends="xPDOSimpleObject">
-		<field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
-		<field key="description" dbtype="text" phptype="text" null="true" default=""/>
-		<field key="active" dbtype="tinyint" precision="1" phptype="boolean" null="true" default="1"/>
-
-		<index alias="name" name="name" primary="false" unique="false" type="BTREE">
-			<column key="name" length="" collation="A" null="false"/>
-		</index>
-		<index alias="active" name="active" primary="false" unique="false" type="BTREE">
-			<column key="active" length="" collation="A" null="false"/>
+		<index alias="date" name="date" primary="false" unique="false" type="BTREE" >
+			<column key="date" length="" collation="A" null="false" />
 		</index>
 	</object>
-
 </model>
