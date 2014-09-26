@@ -7,7 +7,7 @@ $tmp = array(
 		'description' => 'prettywork_menu_desc',
 		'parent' => 'components',
 		'action' => array(
-			'controller' => 'index',ll
+			'controller' => 'index',
 		),
 	),
 );
