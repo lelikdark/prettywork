@@ -5,6 +5,7 @@ $menus = array();
 $tmp = array(
 	'prettywork' => array(
 		'description' => 'prettywork_menu_desc',
+		'parent' => 'components',
 		'action' => array(
 			'controller' => 'index',
 		),
